@@ -1,0 +1,446 @@
+/* General Styles */
+:root {
+    /* Light Mode Colors (Default) */
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+    --primary-darker: #0056b3;
+    --secondary-bg: #f8f9fa;
+    --hero-bg: #e7f3ff;
+    --footer-bg: #343a40;
+    --footer-text: #ffffff;
+    --border-color: #eee;
+    --placeholder-bg: #f0f0f0;
+    --placeholder-border: #ccc;
+    --placeholder-text: #888;
+    --button-text: #ffffff;
+    --shadow-color: rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color); /* Use variable */
+    color: var(--text-color); /* Use variable */
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    font-weight: 400; /* Default font weight */
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+h1, h2, h3 { /* Apply to h3 as well */
+    color: var(--primary-darker); /* Use variable */
+    font-weight: 600; /* Bolder headings */
+}
+
+a {
+    color: var(--primary-color); /* Use variable */
+    text-decoration: none;
+    transition: color 0.2s, opacity 0.2s; /* Add transition */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+section {
+    padding: 60px 20px;
+    border-bottom: 1px solid var(--border-color); /* Use variable */
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--secondary-bg); /* Use variable */
+    padding: 10px 20px;
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px var(--shadow-color); /* Use variable */
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Needed for mobile nav panel positioning */
+}
+
+.header-controls { /* Container for buttons */
+    display: flex;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-darker); /* Use variable */
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Buttons */
+button { /* General button styling */
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* Dark Mode Toggle Button Specifics */
+#dark-mode-toggle {
+    /* padding: 5px 10px; */ /* Use general button padding */
+    margin-left: 15px; /* Reduced margin */
+    cursor: pointer;
+    border: 1px solid var(--primary-darker);
+    background-color: transparent; /* Make it look less prominent initially */
+    color: var(--primary-darker);
+    border-color: var(--primary-darker);
+    /* border-radius: 5px; */ /* Use general button radius */
+}
+
+#dark-mode-toggle:hover {
+    background-color: var(--primary-darker);
+    color: var(--button-text);
+    opacity: 1; /* Override general hover */
+}
+
+/* Mobile Menu Button (Hamburger) */
+#mobile-menu-toggle {
+    display: none; /* Hidden by default */
+    font-size: 1.8em; /* Make icon larger */
+    background: none;
+    border: none;
+    color: var(--primary-darker);
+    padding: 0 5px; /* Adjust padding */
+    margin-left: 10px;
+}
+
+/* Mobile Navigation Panel */
+#mobile-nav-panel {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below header */
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-bg);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    z-index: 999; /* Below header sticky */
+    border-top: 1px solid var(--border-color);
+}
+
+#mobile-nav-panel ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+}
+
+#mobile-nav-panel ul li {
+    margin: 0;
+}
+
+#mobile-nav-panel ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-color);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+}
+#mobile-nav-panel ul li:last-child a {
+    border-bottom: none;
+}
+
+#mobile-nav-panel ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--button-text);
+    opacity: 1;
+}
+
+
+/* Hero Section */
+.hero {
+    background-color: var(--hero-bg); /* Use variable */
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: var(--primary-color); /* Use variable */
+    color: var(--button-text); /* Use variable */
+    /* padding: 10px 20px; */ /* Use general button padding */
+    /* border-radius: 5px; */ /* Use general button radius */
+    font-weight: bold;
+    display: inline-block;
+    border: none; /* Override general button border */
+}
+
+.cta-button:hover {
+    background-color: var(--primary-darker); /* Use variable */
+    text-decoration: none;
+}
+
+/* Section Content Centering (Optional) */
+main section > h2, main section > p {
+    max-width: 800px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Center headings and intro paragraphs */
+}
+
+main section > h2 {
+     margin-bottom: 30px;
+}
+
+/* Placeholders */
+.room-placeholder, .map-placeholder, .gallery-item {
+    background-color: var(--placeholder-bg); /* Use variable */
+    border: 1px dashed var(--placeholder-border); /* Use variable */
+    padding: 40px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    color: var(--placeholder-text); /* Use variable */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Add transition */
+}
+
+.gallery-item:hover { /* Add hover effect for gallery items */
+    opacity: 0.8;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* Contact Form */
+#contact form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--border-color); /* Use variable */
+    border-radius: 5px;
+    background-color: var(--secondary-bg); /* Subtle background for form */
+}
+
+#contact form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--placeholder-border); /* Use variable */
+    border-radius: 4px;
+    background-color: var(--background-color); /* Match body background */
+    color: var(--text-color); /* Match body text */
+}
+
+#contact form button {
+    background-color: var(--primary-color); /* Use variable */
+    color: var(--button-text); /* Use variable */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#contact form button:hover {
+    background-color: var(--primary-darker); /* Use variable */
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg); /* Use variable */
+    color: var(--footer-text); /* Use variable */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        /* Keep flex row for logo and controls */
+        /* flex-direction: column; */
+        padding: 0 15px; /* Adjust padding */
+    }
+
+    nav ul { /* Hide desktop nav */
+        display: none;
+    }
+
+    .header-controls {
+        /* Ensure controls stay together */
+    }
+
+    #mobile-menu-toggle { /* Show hamburger */
+        display: block;
+    }
+
+    #mobile-nav-panel.active { /* Show mobile panel when active */
+        display: block;
+    }
+
+    /* Adjust hero text size */
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    /* Adjust general section padding */
+    section {
+        padding: 40px 15px;
+    }
+
+    /* Adjust heading sizes */
+    h1 { font-size: 2.2em; } /* Slightly larger */
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.3em; }
+
+    /* Adjust gallery grid for mobile */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller min size for mobile */
+        gap: 10px; /* Reduced gap */
+    }
+
+    /* Adjust form width and input padding */
+    #contact form {
+        max-width: 95%;
+        padding: 15px; /* Reduce padding */
+    }
+    #contact form input[type="text"],
+    #contact form input[type="email"],
+    #contact form textarea {
+        padding: 12px; /* Slightly larger padding for easier tapping */
+        width: calc(100% - 26px); /* Adjust width calculation */
+    }
+    #contact form button {
+        padding: 12px 20px; /* Adjust button padding */
+        width: 100%; /* Make button full width */
+    }
+
+
+    /* Ensure dark mode toggle doesn't get too squished */
+    #dark-mode-toggle {
+        margin-left: 5px;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    /* Remove margin-top added previously */
+    /* #dark-mode-toggle {
+        margin-top: 10px;
+    } */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --background-color: #1a1a1a; /* Dark background */
+    --text-color: #e0e0e0; /* Light text */
+    --primary-color: #4dabf7; /* Lighter blue for dark mode */
+    --primary-darker: #1c7ed6; /* Adjusted darker blue */
+    --secondary-bg: #2c2c2c; /* Darker secondary background */
+    --hero-bg: #252525; /* Dark hero background */
+    --footer-bg: #111111; /* Very dark footer */
+    --footer-text: #cccccc; /* Lighter footer text */
+    --border-color: #444444; /* Darker border */
+    --placeholder-bg: #333333; /* Dark placeholder bg */
+    --placeholder-border: #555555; /* Dark placeholder border */
+    --placeholder-text: #aaaaaa; /* Lighter placeholder text */
+    --button-text: #1a1a1a; /* Dark text on light blue buttons */
+    --shadow-color: rgba(255,255,255,0.1); /* Light shadow */
+}
+
+/* Adjust toggle button colors for dark mode */
+body.dark-mode #dark-mode-toggle {
+    border-color: var(--primary-color);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background-color: var(--primary-color);
+    color: var(--button-text);
+}
+
+/* Adjust mobile panel colors for dark mode */
+body.dark-mode #mobile-nav-panel {
+    background-color: var(--secondary-bg);
+    border-top-color: var(--border-color);
+}
+body.dark-mode #mobile-nav-panel ul li a {
+    color: var(--text-color);
+    border-bottom-color: var(--border-color);
+}
+body.dark-mode #mobile-nav-panel ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--button-text);
+}
+
+/* Ensure form inputs are readable in dark mode */
+body.dark-mode #contact form input[type="text"],
+body.dark-mode #contact form input[type="email"],
+body.dark-mode #contact form textarea {
+    background-color: #333; /* Darker input background */
+    color: var(--text-color);
+    border-color: var(--placeholder-border);
+}

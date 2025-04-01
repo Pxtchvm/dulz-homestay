@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Dulz Homestay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Relative path to CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Dulz Homestay</div>
+            <ul>
+                <li><a href="../index.html">Home</a></li> <!-- Relative path to Home -->
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="amenities.html">Amenities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="header-controls">
+                 <button id="dark-mode-toggle">Toggle Dark Mode</button>
+                 <button id="mobile-menu-toggle" class="mobile-only">☰</button> <!-- Hamburger Button -->
+            </div>
+        </nav>
+        <div id="mobile-nav-panel"> <!-- Mobile Nav Panel -->
+             <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="amenities.html">Amenities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Ready to book or have questions? Get in touch!</p>
+            <p><strong>Phone:</strong> [Your Phone Number]</p>
+            <p><strong>Email:</strong> [Your Email Address]</p>
+            <p><strong>Address:</strong> [Your Full Address Here], Pagudpud, Ilocos Norte</p>
+
+            <form action="#" method="post">
+                 <h3>Send us a message:</h3>
+                 <label for="name">Name:</label>
+                 <input type="text" id="name" name="name" required><br>
+
+                 <label for="email">Email:</label>
+                 <input type="email" id="email" name="email" required><br>
+
+                 <label for="message">Message:</label>
+                 <textarea id="message" name="message" rows="4" required></textarea><br>
+
+                 <button type="submit">Send Message</button>
+                 <p><small>Note: Form submission is currently disabled. Please use phone or email.</small></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dulz Homestay. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/script.js"></script> <!-- Relative path to JS -->
+</body>
+</html>
